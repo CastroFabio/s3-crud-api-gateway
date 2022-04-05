@@ -15,7 +15,7 @@ plugins:
   - serverless-iam-roles-per-function
 
 custom:
-  fileBucketName: s3-file-bucket-${self:provider.stage}
+  fileBucketName: s3-file-bucket-${self:provider.stage}-fabios
 
 functions:
   s3FileUploader:
@@ -31,7 +31,7 @@ functions:
           - "s3:Put*"
         Resource: arn:aws:s3:::${self:custom.fileBucketName}/*
   s3FileGet:
-    handler: src/get.deleteItem
+    handler: src/get.getItem
     name: s3-file-get
     events:
       - http:

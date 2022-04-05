@@ -185,7 +185,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/s3-file-api/dev/1649187499255-2022-04-05T19:38:19.255Z/s3-file-api.zip"
+          "S3Key": "serverless/s3-file-api/dev/1649188231154-2022-04-05T19:50:31.154Z/s3-file-api.zip"
         },
         "Handler": "src/upload.uploadItem",
         "Runtime": "nodejs12.x",
@@ -194,7 +194,7 @@
         "Timeout": 10,
         "Environment": {
           "Variables": {
-            "FILE_UPLOAD_BUCKET_NAME": "s3-file_bucket-dev"
+            "FILE_UPLOAD_BUCKET_NAME": "s3-file-bucket-dev-fabios"
           }
         },
         "Role": {
@@ -216,16 +216,16 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/s3-file-api/dev/1649187499255-2022-04-05T19:38:19.255Z/s3-file-api.zip"
+          "S3Key": "serverless/s3-file-api/dev/1649188231154-2022-04-05T19:50:31.154Z/s3-file-api.zip"
         },
-        "Handler": "src/get.deleteItem",
+        "Handler": "src/get.getItem",
         "Runtime": "nodejs12.x",
         "FunctionName": "s3-file-get",
         "MemorySize": 128,
         "Timeout": 10,
         "Environment": {
           "Variables": {
-            "FILE_UPLOAD_BUCKET_NAME": "s3-file_bucket-dev"
+            "FILE_UPLOAD_BUCKET_NAME": "s3-file-bucket-dev-fabios"
           }
         },
         "Role": {
@@ -247,7 +247,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/s3-file-api/dev/1649187499255-2022-04-05T19:38:19.255Z/s3-file-api.zip"
+          "S3Key": "serverless/s3-file-api/dev/1649188231154-2022-04-05T19:50:31.154Z/s3-file-api.zip"
         },
         "Handler": "src/delete.deleteItem",
         "Runtime": "nodejs12.x",
@@ -256,7 +256,7 @@
         "Timeout": 10,
         "Environment": {
           "Variables": {
-            "FILE_UPLOAD_BUCKET_NAME": "s3-file_bucket-dev"
+            "FILE_UPLOAD_BUCKET_NAME": "s3-file-bucket-dev-fabios"
           }
         },
         "Role": {
@@ -271,34 +271,34 @@
         "S3FileDeleteLogGroup"
       ]
     },
-    "S3FileUploaderLambdaVersionrbMhbl09H2jhB96YEUpq1JeJKunmSm6y7307cRhHk": {
+    "S3FileUploaderLambdaVersionHgToPTKejZECq7FnOaoygbuoNXALaPJMUYeWunsGwA": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "S3FileUploaderLambdaFunction"
         },
-        "CodeSha256": "HS8Hxw/hWj0OgC2MY/XfCIgRH9namu14ROBGPbionK8="
+        "CodeSha256": "EUKZ+FjcdREQBr2jQG6Ylz9TDLj1rIClZD+O2X1BNNY="
       }
     },
-    "S3FileGetLambdaVersionDkC8jes3WCAMQATPj3hJ3VOFMtMqKntpEimVagFm4k": {
+    "S3FileGetLambdaVersion03sH1sNChDwhB5iP6aPMj0FeE25aLsTanuNmwmFM5Uc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "S3FileGetLambdaFunction"
         },
-        "CodeSha256": "HS8Hxw/hWj0OgC2MY/XfCIgRH9namu14ROBGPbionK8="
+        "CodeSha256": "EUKZ+FjcdREQBr2jQG6Ylz9TDLj1rIClZD+O2X1BNNY="
       }
     },
-    "S3FileDeleteLambdaVersionhMbam04ibVVacWPzcYOJcoZIylpWCMWWvw7B0rIU48": {
+    "S3FileDeleteLambdaVersionSyaSdaa1wN0k5fqho7PxxAvvVrJcdUNbfPsxsaw": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "S3FileDeleteLambdaFunction"
         },
-        "CodeSha256": "HS8Hxw/hWj0OgC2MY/XfCIgRH9namu14ROBGPbionK8="
+        "CodeSha256": "EUKZ+FjcdREQBr2jQG6Ylz9TDLj1rIClZD+O2X1BNNY="
       }
     },
     "ApiGatewayRestApi": {
@@ -478,7 +478,7 @@
         "S3FileDeleteLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1649187494831": {
+    "ApiGatewayDeployment1649188227343": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -655,7 +655,7 @@
                   "Action": [
                     "s3:Put*"
                   ],
-                  "Resource": "arn:aws:s3:::s3-file_bucket-dev/*"
+                  "Resource": "arn:aws:s3:::s3-file-bucket-dev-fabios/*"
                 }
               ]
             }
@@ -731,7 +731,7 @@
                   "Action": [
                     "s3:Get*"
                   ],
-                  "Resource": "arn:aws:s3:::s3-file_bucket-dev/*"
+                  "Resource": "arn:aws:s3:::s3-file-bucket-dev-fabios/*"
                 }
               ]
             }
@@ -807,7 +807,7 @@
                   "Action": [
                     "s3:DeleteObject*"
                   ],
-                  "Resource": "arn:aws:s3:::s3-file_bucket-dev/*"
+                  "Resource": "arn:aws:s3:::s3-file-bucket-dev-fabios/*"
                 }
               ]
             }
@@ -834,7 +834,7 @@
     "FileBucket": {
       "Type": "AWS::S3::Bucket",
       "Properties": {
-        "BucketName": "s3-file_bucket-dev",
+        "BucketName": "s3-file-bucket-dev-fabios",
         "AccessControl": "Private"
       }
     }
@@ -851,7 +851,7 @@
     "S3FileUploaderLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "S3FileUploaderLambdaVersionrbMhbl09H2jhB96YEUpq1JeJKunmSm6y7307cRhHk"
+        "Ref": "S3FileUploaderLambdaVersionHgToPTKejZECq7FnOaoygbuoNXALaPJMUYeWunsGwA"
       },
       "Export": {
         "Name": "sls-s3-file-api-dev-S3FileUploaderLambdaFunctionQualifiedArn"
@@ -860,7 +860,7 @@
     "S3FileGetLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "S3FileGetLambdaVersionDkC8jes3WCAMQATPj3hJ3VOFMtMqKntpEimVagFm4k"
+        "Ref": "S3FileGetLambdaVersion03sH1sNChDwhB5iP6aPMj0FeE25aLsTanuNmwmFM5Uc"
       },
       "Export": {
         "Name": "sls-s3-file-api-dev-S3FileGetLambdaFunctionQualifiedArn"
@@ -869,7 +869,7 @@
     "S3FileDeleteLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "S3FileDeleteLambdaVersionhMbam04ibVVacWPzcYOJcoZIylpWCMWWvw7B0rIU48"
+        "Ref": "S3FileDeleteLambdaVersionSyaSdaa1wN0k5fqho7PxxAvvVrJcdUNbfPsxsaw"
       },
       "Export": {
         "Name": "sls-s3-file-api-dev-S3FileDeleteLambdaFunctionQualifiedArn"
